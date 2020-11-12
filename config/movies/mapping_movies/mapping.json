@@ -1,0 +1,99 @@
+{
+    "mappings" : {
+      "movie" : {
+        "properties" : {
+          "fields" : {
+            "properties" : {
+              "actors" : {
+                "type" : "text",
+                "fields" : {
+                  "raw" : {
+                    "type" : "text",
+                    "index" : false
+                  }
+                }
+              },
+              "directors" : {
+                "type" : "text",
+                "fields" : {
+                  "raw" : {
+                    "type" : "text",
+                    "index" : false
+                  }
+                }
+              },
+              "genres" : {
+                "type" : "text",
+                "fields" : {
+                  "raw" : {
+                    "type" : "text",
+                    "index" : false
+                  }
+                }
+              },
+              "image_url" : {
+                "type" : "text",
+                "fields" : {
+                  "raw" : {
+					"type" : "text",
+					"index" : false
+					}
+                }
+              },
+              "plot" : {
+                "type" : "text",
+                "fields" : {
+                  "keyword" : {
+                    "type" : "keyword",
+                    "ignore_above" : 256
+                  }
+                }
+              },
+              "rank" : {
+                "type" : "long"
+              },
+              "rating" : {
+                "type" : "float"
+              },
+              "release_date" : {
+                "type" : "date"
+              },
+              "running_time_secs" : {
+                "type" : "long"
+              },
+              "title" : {
+                "type" : "text",
+                "fields" : {
+                  "keyword" : {
+                    "type" : "keyword",
+                    "ignore_above" : 256
+                  }
+                }
+              },
+              "year" : {
+                "type" : "long"
+              }
+            }
+          },
+          "id" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          },
+          "type" : {
+            "type" : "text",
+            "fields" : {
+              "keyword" : {
+                "type" : "keyword",
+                "ignore_above" : 256
+              }
+            }
+          }
+        }
+      }
+	}
+}

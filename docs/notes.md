@@ -10,3 +10,11 @@
 `sudo groupadd docker`
 `sudo usermod -aG docker $USER`
 `newgrp docker`
+
+
+- In the lab 4 you may not have your data from ingested into elasticsearch from filebeat. In this case to fix the problem try to delete the pipeline using this command `curl -XDELETE -u elastic:password 'http://elasticsearch:9200/_ingest/pipeline/filebeat-*'` and restart filebeat and it should work.
+
+- We can run multiple node of elasticsearch in the same machine. We have only to change this properties in the elasticsearch yml file to the number of node:
+`node.max_local_storage_nodes: 2`
+
+- Elasticsearch is a memory-based engine so it will consume too much memory if you run more than one node in the same your machine. You can adjust the maximum memory by changing the file `config/jvm.options` `-Xms1g -Xmx1g`

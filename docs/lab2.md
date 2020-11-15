@@ -2,13 +2,16 @@
 
 
 
-- Create index mapping 
-  `curl -XPUT -H "Content-Type: application/json" localhost:8000/currency -d @coin_mapping.json`
-- delete index 
-  `curl -X DELETE "localhost:8000/currency?pretty"`
-- display indexes 
-  `curl -XGET "localhost:8000/_cat/indices"`
-- display mapping 
+- Testing index:
+  - Create index mapping 
+    `curl -XPUT -H "Content-Type: application/json" localhost:8000/currency -d @coin_mapping.json`
+  - delete index 
+    `curl -X DELETE "localhost:8000/currency?pretty"`
+  - display indexes 
+    `curl -XGET "localhost:8000/_cat/indices"`
+  - display mapping 
+    `curl -XGET "localhost:8000/currency"`
+
 
 - Use Kibana console to execute the following and create the log-01 index:
 

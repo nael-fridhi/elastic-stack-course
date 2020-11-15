@@ -1,7 +1,7 @@
 # Lab1 : Installation & Configuration Elastic Stack
 
 
-In this we are going to install and configure elastic stack using two methods:
+In this labs you are going to install and configure elastic stack using two methods:
 
 1. Docker
 2. Using binaries
@@ -9,18 +9,24 @@ In this we are going to install and configure elastic stack using two methods:
 
 ## Docker
 
-First of all you have to verify if you have docker installed or not. In case you don't have docker installed please follow the installation guide in the docker documentation: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+First of all you have to verify if you have docker and docker-compose installed or not. In case you don't have docker installed : you could use the script `install-docker.sh` in the config folder in case you are using ubuntu as operating system if it's not the case please follow the installation guide in the docker documentation: [https://docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
 
+- Once docker and docker-compose installed:
+  1. Take a look at the docker-compose.yml which contains the containers we will run
+  2. run this command `docker-compose -f docker-compose.yml up -d`
+  3. After waiting some minutes we can verify that our cluster is working well by accessing this url:
+    - `localhost:9200` : elasticsearch endpoint
+    - `localhost:5601` : kibana UI
 
 
 ## Using binaries 
 
-Elasticsearch using JVM under the hood to work so be sure that you have JAVA installed.
+- Elasticsearch using JVM under the hood to work so be sure that you have JAVA installed.
 
-**JAVA INSTALLATION**
-[https://www.java.com/en/download/help/index_installing.html](https://www.java.com/en/download/help/index_installing.html)
+- **Java installation**: 
+Please refer to this link to install Java : [https://www.java.com/en/download/help/index_installing.html](https://www.java.com/en/download/help/index_installing.html)
 
-**ELASTICSEARCH INSTALLATION**
+- **Elasticsearch installtion**:
 [https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/install-elasticsearch.html)
 
 1. Import the Elastic GPG key
@@ -48,20 +54,30 @@ change the line `#node.name: node-1` to `node.name: node-1`
 
 ### Install Kibana:
 
+We will follow the same approach to install kibana :
+
 `sudo su -`
 `curl -O https://artifacts.elastic.co/downloads/kibana/kibana-7.6.0-x86_64.rpm`
 `rpm --install kibana-7.6.0-x86_64.rpm`
 `systemctl enable kibana`
 
+- We change the configuration of kibana like the port number by editing `kibana.yml` file:
+    vim /etc/kibana/kibana.yml
+    server.port: 8080
+    server.host: "127.0.0.1"
 
-`vim /etc/kibana/kibana.yml`
-`server.port: 8080`
-`server.host: "127.0.0.1"`
-
-
+- Once done you can execute the start command and watch the log to make sure all things went well and kibana has running status:
 `systemctl start kibana`
 `less /var/log/message`
 
-check Elasticsearch node status using the console: 
-Go to Dev Tools > Console : `GET _cat/nodes?v`
-Or using Command line: `curl localhost:9200/_cat/nodes?v`
+- Check Elasticsearch node status using the console: 
+  - Go to Dev Tools > Console : `GET _cat/nodes?v`
+  - Or using Command line: `curl localhost:9200/_cat/nodes?v`
+
+
+- Cluster Administration
+
+`curl localhost:9200/_cluster/health?pretty`
+`curl localhost:9200/_cat/shards`
+`curl localhost:9201/_nodes/process?pretty`
+

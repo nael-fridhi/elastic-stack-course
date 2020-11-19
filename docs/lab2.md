@@ -1,20 +1,19 @@
 # Lab2: Elasticsearch Log analysis using Kibana
 
 
-
 - Testing index:
-  - Create index mapping 
-    `curl -XPUT -H "Content-Type: application/json" localhost:8000/currency -d @coin_mapping.json`
-  - delete index 
-    `curl -X DELETE "localhost:8000/currency?pretty"`
-  - display indexes 
-    `curl -XGET "localhost:8000/_cat/indices"`
-  - display mapping 
-    `curl -XGET "localhost:8000/currency"`
+  - Create index mapping </br> 
+    `curl -XPUT -H "Content-Type: application/json" localhost:9200/<index_name> -d @<path_to_data_file>.json`
+  - delete index </br>
+    `curl -X DELETE "localhost:9200/<index_name>?pretty"`
+  - display indexes </br>
+    `curl -XGET "localhost:9200/_cat/indices"`
+  - display mapping </br>
+    `curl -XGET "localhost:9200/<name_of_mapping>"`
 
 
 - Use Kibana console to execute the following and create the log-01 index:
-
+<pre>
     PUT /logs-01
     {
       "aliases": {
@@ -25,10 +24,11 @@
       "number_of_replicas": 1
     }
     }
-
+</pre>
 
 - Use Kibana console to execute the following and create the log-02 index:
 
+<pre><code>
     PUT /logs-02
     {
     "aliases": {
@@ -39,12 +39,12 @@
         "number_of_replicas": 1
     }
     }
-
+</pre></code>
 
 - CRUD operations on Elasticsearch
 
   - Create:
-
+<pre><code>
     PUT bank/_doc/1000
     {
     "account_number": 1000,
@@ -59,9 +59,10 @@
     "city": "New York",
     "state": "NY"
     }
+</pre></code>
 
   - Update:
-
+<pre><code>
     POST bank/_update/100/
     {
     "doc": {
@@ -70,18 +71,19 @@
         "state": "DC"
     }
     }
+</pre></code>
 
   - Delete:
-
+<pre><code>
     DELETE bank/_doc/1
     DELETE bank/_doc/10
-
+</pre></code>
 
 ## Querying data in Elasticsearch
 
 - Knowing how to index data in Elasticsearch is important, but knowing how to ask the data precise questions is even more crucial.
 
-
+<pre><code>
     GET shakespeare/_search
     {
       "query": {
@@ -92,8 +94,9 @@
         }
       }
     }
+</pre></code>
 
-
+<pre><code>
     GET shakespeare/_search
     {
       "size": 25, 
@@ -107,8 +110,8 @@
         }
       }
     }
-
-
+</pre></code>
+<pre><code>
     GET shakespeare/_search
     {
       "size": 5, 
@@ -118,3 +121,4 @@
         }
       }
     }
+  </pre></code>

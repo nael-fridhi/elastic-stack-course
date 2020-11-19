@@ -1,0 +1,333 @@
+{"index":{"_index":"currency","_id":0}}
+{
+    "id":1,
+    "name":"Bitcoin",
+    "symbol":"BTC",
+    "slug":"bitcoin",
+    "num_market_pairs":9398,
+    "date_added":"2013-04-28T00:00:00.000Z",
+    "tags":[
+        "mineable",
+        "pow",
+        "sha-256",
+        "store-of-value",
+        "state-channels"
+    ],
+    "max_supply":21000000,
+    "circulating_supply":18538368,
+    "total_supply":18538368,
+    "platform":null,
+    "cmc_rank":1,
+    "last_updated":"2020-11-11T17:42:02.000Z",
+    "quote":{
+        "EUR":{
+        "price":13480.693366406435,
+        "volume_24h":23140722570.52429,
+        "percent_change_1h":0.99780795,
+        "percent_change_24h":3.26805729,
+        "percent_change_7d":11.61732587,
+        "market_cap":249910054521.60132,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":1}}
+{
+    "id":1027,
+    "name":"Ethereum",
+    "symbol":"ETH",
+    "slug":"ethereum",
+    "num_market_pairs":5504,
+    "date_added":"2015-08-07T00:00:00.000Z",
+    "tags":[
+        "mineable",
+        "pow",
+        "smart-contracts"
+    ],
+    "max_supply":null,
+    "circulating_supply":113383918.8115,
+    "total_supply":113383918.8115,
+    "platform":null,
+    "cmc_rank":2,
+    "last_updated":"2020-11-11T17:42:02.000Z",
+    "quote":{
+        "EUR":{
+        "price":398.30643494059024,
+        "volume_24h":10949884977.372282,
+        "percent_change_1h":1.43192284,
+        "percent_change_24h":4.67404486,
+        "percent_change_7d":15.78789908,
+        "market_cap":45161544481.401886,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":2}}
+{
+    "id":825,
+    "name":"Tether",
+    "symbol":"USDT",
+    "slug":"tether",
+    "num_market_pairs":8896,
+    "date_added":"2015-02-25T00:00:00.000Z",
+    "tags":[
+        "store-of-value",
+        "payments",
+        "stablecoin",
+        "stablecoin-asset-backed"
+    ],
+    "max_supply":null,
+    "circulating_supply":17456859235.158333,
+    "total_supply":17818404167.540234,
+    "platform":{
+        "id":1027,
+        "name":"Ethereum",
+        "symbol":"ETH",
+        "slug":"ethereum",
+        "token_address":"0xdac17f958d2ee523a2206206994597c13d831ec7"
+    },
+    "cmc_rank":3,
+    "last_updated":"2020-11-11T17:42:06.000Z",
+    "quote":{
+        "EUR":{
+        "price":0.8505467757808358,
+        "volume_24h":34115198859.758984,
+        "percent_change_1h":-0.15980604,
+        "percent_change_24h":-0.67809303,
+        "percent_change_7d":-1.55923406,
+        "market_cap":14847875337.72383,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":3}}
+{
+    "id":52,
+    "name":"XRP",
+    "symbol":"XRP",
+    "slug":"xrp",
+    "num_market_pairs":658,
+    "date_added":"2013-08-04T00:00:00.000Z",
+    "tags":[
+        "medium-of-exchange",
+        "enterprise-solutions",
+        "binance-chain"
+    ],
+    "max_supply":100000000000,
+    "circulating_supply":45312488850,
+    "total_supply":99990859785,
+    "platform":null,
+    "cmc_rank":4,
+    "last_updated":"2020-11-11T17:43:02.000Z",
+    "quote":{
+        "EUR":{
+        "price":0.22005880060174804,
+        "volume_24h":2419183965.068682,
+        "percent_change_1h":0.39804614,
+        "percent_change_24h":1.18689526,
+        "percent_change_7d":7.98908744,
+        "market_cap":9971411948.61108,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":4}}
+{
+    "id":1975,
+    "name":"Chainlink",
+    "symbol":"LINK",
+    "slug":"chainlink",
+    "num_market_pairs":389,
+    "date_added":"2017-09-20T00:00:00.000Z",
+    "tags":[
+        "platform",
+        "defi",
+        "oracles",
+        "smart-contracts",
+        "substrate",
+        "polkadot"
+    ],
+    "max_supply":null,
+    "circulating_supply":391509556.4344445,
+    "total_supply":1000000000,
+    "platform":{
+        "id":1027,
+        "name":"Ethereum",
+        "symbol":"ETH",
+        "slug":"ethereum",
+        "token_address":"0x514910771af9ca656af840dff83e8264ecf986ca"
+    },
+    "cmc_rank":5,
+    "last_updated":"2020-11-11T17:42:09.000Z",
+    "quote":{
+        "EUR":{
+        "price":11.30209967840785,
+        "volume_24h":1289150257.6827824,
+        "percent_change_1h":1.99681276,
+        "percent_change_24h":2.94482805,
+        "percent_change_7d":27.49496975,
+        "market_cap":4424880031.871335,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":5}}
+{
+    "id":1831,
+    "name":"Bitcoin Cash",
+    "symbol":"BCH",
+    "slug":"bitcoin-cash",
+    "num_market_pairs":575,
+    "date_added":"2017-07-23T00:00:00.000Z",
+    "tags":[
+        "mineable",
+        "marketplace",
+        "enterprise-solutions",
+        "binance-chain"
+    ],
+    "max_supply":21000000,
+    "circulating_supply":18569375,
+    "total_supply":18569375,
+    "platform":null,
+    "cmc_rank":6,
+    "last_updated":"2020-11-11T17:42:07.000Z",
+    "quote":{
+        "EUR":{
+        "price":220.50531292681092,
+        "volume_24h":1223514860.0801005,
+        "percent_change_1h":0.62458335,
+        "percent_change_24h":-0.15065472,
+        "percent_change_7d":6.16286667,
+        "market_cap":4094645845.2302995,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":6}}
+{
+    "id":1839,
+    "name":"Binance Coin",
+    "symbol":"BNB",
+    "slug":"binance-coin",
+    "num_market_pairs":453,
+    "date_added":"2017-07-25T00:00:00.000Z",
+    "tags":[
+        "marketplace",
+        "payments"
+    ],
+    "max_supply":176406561,
+    "circulating_supply":144406560.9,
+    "total_supply":176406560.9,
+    "platform":null,
+    "cmc_rank":7,
+    "last_updated":"2020-11-11T17:42:06.000Z",
+    "quote":{
+        "EUR":{
+        "price":23.91119511026462,
+        "volume_24h":241122300.62721518,
+        "percent_change_1h":-0.06996449,
+        "percent_change_24h":-0.31272755,
+        "percent_change_7d":4.0057368,
+        "market_cap":3452933452.8822107,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":7}}
+{
+    "id":6636,
+    "name":"Polkadot",
+    "symbol":"DOT",
+    "slug":"polkadot-new",
+    "num_market_pairs":94,
+    "date_added":"2020-08-19T00:00:00.000Z",
+    "tags":[
+        "substrate",
+        "polkadot",
+        "binance-chain"
+    ],
+    "max_supply":null,
+    "circulating_supply":877261455.608107,
+    "total_supply":1012066868.4996051,
+    "platform":null,
+    "cmc_rank":8,
+    "last_updated":"2020-11-11T17:43:05.000Z",
+    "quote":{
+        "EUR":{
+        "price":3.8598125724222783,
+        "volume_24h":336062888.54933417,
+        "percent_change_1h":1.22355461,
+        "percent_change_24h":3.20666217,
+        "percent_change_7d":10.19284801,
+        "market_cap":3386064795.65764,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":8}}
+{
+    "id":2,
+    "name":"Litecoin",
+    "symbol":"LTC",
+    "slug":"litecoin",
+    "num_market_pairs":720,
+    "date_added":"2013-04-28T00:00:00.000Z",
+    "tags":[
+        "mineable",
+        "pow",
+        "scrypt",
+        "medium-of-exchange",
+        "binance-chain"
+    ],
+    "max_supply":84000000,
+    "circulating_supply":65859197.49979,
+    "total_supply":65859197.49979,
+    "platform":null,
+    "cmc_rank":9,
+    "last_updated":"2020-11-11T17:43:02.000Z",
+    "quote":{
+        "EUR":{
+        "price":50.904580980985685,
+        "volume_24h":2129498493.294864,
+        "percent_change_1h":0.50839229,
+        "percent_change_24h":2.16015288,
+        "percent_change_7d":9.33682642,
+        "market_cap":3352534852.47079,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":9}}
+{
+    "id":2010,
+    "name":"Cardano",
+    "symbol":"ADA",
+    "slug":"cardano",
+    "num_market_pairs":208,
+    "date_added":"2017-10-01T00:00:00.000Z",
+    "tags":[
+        "mineable",
+        "platform",
+        "research",
+        "smart-contracts",
+        "binance-chain"
+    ],
+    "max_supply":45000000000,
+    "circulating_supply":31112484646,
+    "total_supply":45000000000,
+    "platform":null,
+    "cmc_rank":10,
+    "last_updated":"2020-11-11T17:42:07.000Z",
+    "quote":{
+        "EUR":{
+        "price":0.09136078208742672,
+        "volume_24h":542805864.9881783,
+        "percent_change_1h":-0.58569249,
+        "percent_change_24h":1.90133253,
+        "percent_change_7d":12.14804204,
+        "market_cap":2842460929.9416156,
+        "last_updated":"2020-11-11T17:42:57.000Z"
+        }
+    }
+}
+{"index":{"_index":"currency","_id":10}}

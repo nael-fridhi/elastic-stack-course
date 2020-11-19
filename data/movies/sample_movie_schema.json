@@ -1,0 +1,13 @@
+{
+    "title" : "Star Wars",
+    "directors" : ["George Lucas"],
+    "release_date" : "1977-05-25T00:00:00Z",
+    "rating" : 8.7,
+    "genres" : ["Action","Adventure","Fantasy","Sci-Fi"],
+    "plot" : "Luke Skywalker joins forces with a Jedi Knight, a cocky pilot, a wookiee and two droids to save the universe from the Empire's world-destroying battle-station, while also attempting to rescue Princess Leia from the evil Darth Vader.",
+    "image_url" : "http://ia.media-imdb.com/images/M/MV5BMTU4NTczODkwM15BMl5BanBnXkFtZTcwMzEyMTIyMw@@._V1_SX400_.jpg",
+    "rank" : 226,
+    "running_time_secs" : 7260,
+    "actors" : ["Mark Hamill","Harrison Ford","Carrie Fisher"],
+    "year" : 1977
+}

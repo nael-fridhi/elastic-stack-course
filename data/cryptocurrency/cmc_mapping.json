@@ -1,0 +1,82 @@
+{
+    "mappings": {
+        "currency": {
+            "properties": {
+                "id": {
+                    "type": "keyword"
+                },
+                "name": {
+                    "type": "keyword"
+                },
+                "symbol": {
+                    "type": "keyword"
+                },
+                "slug": {
+                    "type": "keyword"
+                },
+                "num_market_pairs": {
+                    "type": "integer"
+                },
+                "date_added": {
+                    "type": "date"
+                },
+                "tags": {
+                    "type": "text",
+                    "fields": {
+                        "raw": {
+                            "type": "text",
+                            "index": false
+                        }
+                    }
+                },
+                "max_supply": {
+                    "type": "double"
+                },
+                "circulating_supply": {
+                    "type": "float"
+                },
+                "total_supply": {
+                    "type": "double"
+                },
+                "platform": {
+                    "type": "text"
+                },
+                "cmc_rank": {
+                    "type": "integer"
+                },
+                "last_updated": {
+                    "type": "date"
+                },
+                "quote": {
+                    "properties": {
+                        "EUR": {
+                            "properties": {
+                                "price": {
+                                    "type": "long"
+                                },
+                                "volume_24h": {
+                                    "type": "double"
+                                },
+                                "percent_change_1h": {
+                                    "type": "double"
+                                },
+                                "percent_change_24h": {
+                                    "type": "double"
+                                },
+                                "percent_change_7d": {
+                                    "type": "double"
+                                },
+                                "market_cap": {
+                                    "type": "double"
+                                },
+                                "last_updated": {
+                                    "type": "date"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

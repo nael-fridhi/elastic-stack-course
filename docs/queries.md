@@ -1,4 +1,4 @@
-# Elasticsearch Queries Samples
+# Elasticsearch Search Queries Samples
 1. Full-text Analyzed Search Queries
   - **match Query**
 <pre><code>

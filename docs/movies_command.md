@@ -1,39 +1,39 @@
 # Lab Movies Json 
 
-- Import json file to elasticsearch
+- Import json file to elasticsearch: <br/>
 `curl -XPUT -H "Content-Type: application/json" localhost:9200/_bulk --data-binary @movies_elastic.json`
 
-- To verify the content we can open a browser and go to this URL
+- To verify the content we can open a browser and go to this URL: <br/>
 `http://localhost:9200/movies/movie/_search`
 
-- Upload mapping movies version 2
+- Upload mapping movies version 2: <br/>
 `curl -XPUT -H "Content-Type: application/json" localhost:9200/movies2 -d @mapping_movies/mapping.json`
 
-- Import data movies version 2
+- Import data movies version 2: <br/>
 `curl -XPUT -H "Content-Type: application/json" localhost:9200/_bulk --data-binary @mapping_movies/movies_elastic2.json`
 
-- Execute the first search query using the browser
+- Execute the first search query using the browser: <br/>
 `http://localhost:9200/movies2/_search?q=Star+Wars`
 
-- Filter using title field 
+- Filter using title field: <br/>
 `http://localhost:9200/movies2/_search?q=fields.title:Star Wars`
 
-- Query using a list
+- Query using a list: <br/>
 `http://localhost:9200/movies2/_search?q=fields.actors:Harrison Ford`
 
-- We can have more items using size
+- We can have more items using size: <br/>
 `http://localhost:9200/movies2/_search?q=fields.actors:Harrison Ford&size=20`
 
-- Using AND in the query 
+- Using AND in the query: <br/>
 `http://localhost:9200/movies2/_search?q=fields.title:Star Wars AND fields.directors:George Lucas`
 
-- Using negation 
+- Using negation: <br/>
 `http://localhost:9200/movies2/_search?q=actors=Harrison Ford AND fields.plot:Jones AND -fields.plot:Nazis`
 
 - Elasticsearch Query DSL
 
-  - query1.json
-
+  - query1.json:
+<pre><code>
     {
     "query":{
         "match":{
@@ -41,10 +41,13 @@
         }
     }
     }
+</pre></code>
 
 `curl -XGET -H "Content-Type: application/json" 'localhost:9200/movies2/movie/_search?pretty' -d @query1`
 
+
 - query2.json
+</pre></code>
     {"query":{
     "bool": {
         "should": [
@@ -52,15 +55,17 @@
             { "match": { "fields.directors": "George Lucas" }}
         ]
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "should": { "match": { "fields.title": "Star Wars" }},
         "must" :  { "match": { "fields.directors": "George Lucas" }}
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "should": [
@@ -68,15 +73,16 @@
             { "match": { "fields.directors": "George Lucas" }}
         ]
     }}}
+</pre></code>
 
-
-
+<pre><code>
     {  "query": {
     "match": 
         {"fields.actors":"Harrison Ford"}
     }}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "should": [
@@ -84,8 +90,9 @@
             { "match": { "fields.plot": "Jones" }}
         ]
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "should": [
@@ -94,8 +101,9 @@
         ],
         "must_not" : { "match" : {"fields.plot":"Nazis"}}
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
             "should": [
@@ -103,7 +111,9 @@
                 { "range": { "fields.rank": {"lt":1000 }}}
            ]
     }}}
+</pre></code>
 
+<pre><code>
     {"query":{
     "bool": {
         "must": [
@@ -111,8 +121,9 @@
             { "range": { "fields.rank": {"lt":1000 }}}
         ]
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "must": [
@@ -120,8 +131,9 @@
             { "range": { "fields.rank": {"lt":1000 }}}
         ]
     }}}
+</pre></code>
 
-
+<pre><code>
     {"query":{
     "bool": {
         "should": { "match": { "fields.directors": "James Cameron" }},
@@ -131,8 +143,9 @@
             {"match":{"fields.genres":"Drama"}}
         ]
     }}}
+</pre></code>
 
-
+<pre><code>
     {
     "query": {
         "bool":{
@@ -140,21 +153,25 @@
             "filter": {"range": {"fields.release_date":
                 { "from": "2010-01-01", "to": "2015-12-31"}}}
     }}}
+</pre></code>
 
 - Aggregations: 
 
+<pre><code>
     {"aggs" : {
     "nb_par_annee" : {
         "terms" : {"field" : "fields.year"}
     }}}
 
-
+</pre></code>
+<pre><code>
     {"aggs" : {
     "note_moyenne" : {
         "avg" : {"field" : "fields.rating"}
     }}}
+</pre></code>
 
-
+<pre><code>
     {
     "query" :{
         "match" : {"fields.directors" : "George Lucas"}
@@ -167,8 +184,9 @@
                         "avg" : {"field" : "fields.rank"}
             }
     }}
+</pre></code>
 
-
+<pre><code>
     {"aggs" : {
     "group_year" : {
         "terms" : {"field" : "fields.year"},
@@ -176,8 +194,9 @@
             "note_moyenne" : {"avg" : {"field" : "fields.rating"}}
         }
     }}}
+</pre></code>
 
-
+<pre><code>
     {"aggs" : {
     "group_year" : {
         "terms" : { "field" : "fields.year" },
@@ -187,10 +206,10 @@
             "note_max" : {"max" : {"field" : "fields.rating"}}
         }
     }}}
+</pre></code>
 
-
-  - Sorting
-
+- Sorting
+<pre><code>
     {"aggs" : {
     "group_year" : {
         "terms" : {
@@ -201,9 +220,10 @@
             "note_moyenne" : {"avg" : {"field" : "fields.rating"}}
         }
     }}}
+</pre></code>
 
 - Aggregation: range
-
+<pre><code>
     {"aggs" : {
     "group_range" : {
         "range" : {
@@ -216,21 +236,24 @@
                 {"from" : 8}
             ]
     }}}}
+</pre></code>
 
 
 - Aggregation: raw
-
+<pre><code>
     {"aggs" : {
     "nb_per_genres" : {
         "terms" : {"field" : "fields.genres.raw"}
     }}}
+</pre></code>
 
-
+<pre><code>
     {"aggs" : {
     "nb_per_director" : {
         "terms" : {"field" : "fields.directors.raw"}
     }}}
-
+</pre></code>
+<pre><code>
     {"aggs" : {
     "group_actors" : {
         "terms" : {
@@ -242,3 +265,4 @@
             "rang_max" : {"max" : {"field" : "fields.rank"}}
         }
     }}}
+</pre></code>

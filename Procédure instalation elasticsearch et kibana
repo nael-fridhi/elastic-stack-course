@@ -1,0 +1,37 @@
+#Extinction des conteneurs
+docker-compose down 
+docker ps
+docker system prune 
+
+#Installation de Java
+sudo apt install default-jre
+
+#Installation d'elasticsearch
+sudo su -
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+sudo apt-get install apt-transport-https
+echo "deb https://artifacts.elastic.co/packages/7.x/apt stable main" | sudo tee /etc/apt/sources.list.d/elastic-7.x.list
+sudo apt-get update && sudo apt-get install elasticsearch
+
+#Activer et démarer le service elasticsearch + vérification du status
+systemctl status elasticsearch
+systemctl enable elasticsearch
+systemctl start elasticsearch
+systemctl status elasticsearch
+
+# vérifier si cela fonctionne
+curl localhost:9200
+
+#installation de Kibana
+sudo apt-get install kibana
+#Activer et démarer le service Kibana + vérification du status
+systemctl status elasticsearch
+systemctl enable elasticsearch
+systemctl start elasticsearch
+systemctl status elasticsearch
+
+
+#Modification
+nano /etc/kibana/kibana.yml
+    server.host : "0.0.0.0"
+systemctl restart kibana

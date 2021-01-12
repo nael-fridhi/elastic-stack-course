@@ -9,7 +9,8 @@ This project contains the Labs for the Elastic Stack course given to students an
 4. Lab4: [Mini-project Elastic Stack](docs/lab4.md)
 
 
-- Documentaion Elastic
+- Documentation Elastic
 [https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)
-
+- Documentation Kibana
+[https://www.elastic.co/guide/en/kibana/current/index.html](https://www.elastic.co/guide/en/kibana/current/index.html)
 

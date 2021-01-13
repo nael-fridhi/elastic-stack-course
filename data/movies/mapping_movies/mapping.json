@@ -1,6 +1,5 @@
 {
     "mappings" : {
-      "movie" : {
         "properties" : {
           "fields" : {
             "properties" : {
@@ -94,6 +93,5 @@
             }
           }
         }
-      }
 	}
 }
